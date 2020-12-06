@@ -7,11 +7,17 @@ import re
 A = list(string.ascii_uppercase)
 Cipher = []
 
+#To Decrypt Or Encrypt
+Flag = input("To Encrypt Enter 1 to Decrypt Enter 0: ")
+
 while(True):
     Key = int(input("Please Enter a Key Between 1 and 25: "))
     #Verfication Of Key
     if(Key < 26):
         break
+
+#If we want to decrypt we'll need the Kbar which satisfies K + KBAR = 26 
+if(Flag == '0'): Key = 26 - Key
 
 S = input("Please Enter Plaintext: ")
 
@@ -26,4 +32,3 @@ for x in range(0,len(CleanString)):
 
 #To Decrypt You can use K-bar instead of Key and print
 print(''.join(Cipher))
-
